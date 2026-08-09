@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const fs = require("fs");
 const jwt = require("jsonwebtoken");
 
@@ -5,13 +7,13 @@ const jwt = require("jsonwebtoken");
 // APPLE CREDENTIALS
 // ============================================================
 
-const ISSUER_ID = "664d6bf0-4b0d-4d3b-99b4-6aad6ce3d159";
-const KEY_ID = "N5DSDHXQ9V";
-const BUNDLE_ID = "com.naapaata.mp3";
+const ISSUER_ID = process.env.APPLE_ISSUER_ID;
+const KEY_ID =  process.env.APPLE_KEY_ID;
+const BUNDLE_ID = process.env.APPLE_BUNDLE_ID;
 
 // IMPORTANT:
 // Use the ORIGINAL transaction ID from the previous response.
-const ORIGINAL_TRANSACTION_ID = "420002728947066";
+const ORIGINAL_TRANSACTION_ID = process.env.APPLE_ORIGINAL_TRANSACTION_ID;
 
 const PRIVATE_KEY = fs.readFileSync("./AuthKeys.p8", "utf8");
 
