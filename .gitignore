@@ -1,0 +1,4 @@
+node_modules/
+AuthKeys.p8
+.env
+.DS_Store
